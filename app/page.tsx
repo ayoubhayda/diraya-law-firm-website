@@ -13,6 +13,7 @@ import { SectionBadge } from "@/components/section-badge";
 import { useLocale } from "@/hooks/use-locale-context";
 import { motion } from "framer-motion";
 import { MessageSquareQuote } from "lucide-react";
+import PracticeAreasBar from "@/components/General/PracticeAreasBar";
 
 export default function HomePage() {
   const { locale } = useLocale();
@@ -22,6 +23,9 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+
+        {/* Practice Areas Bar */}
+        <PracticeAreasBar />
 
         <ServicesPreview />
 
