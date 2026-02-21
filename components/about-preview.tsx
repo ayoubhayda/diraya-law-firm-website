@@ -120,7 +120,7 @@ export function AboutPreview() {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-background">
+    <section className="py-12 sm:py-16 lg:py-20 bg-background overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Mobile Layout - Completely redesigned minimal centered design */}
         <motion.div

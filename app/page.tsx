@@ -3,7 +3,6 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { WhatsAppButton } from "@/components/whatsapp-button";
-import { HeroSection } from "@/components/hero-section";
 import { ServicesPreview } from "@/components/services-preview";
 import { AboutPreview } from "@/components/about-preview";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
@@ -14,6 +13,7 @@ import { useLocale } from "@/hooks/use-locale-context";
 import { motion } from "framer-motion";
 import { MessageSquareQuote } from "lucide-react";
 import PracticeAreasBar from "@/components/General/PracticeAreasBar";
+import { MainHeroSection } from "@/components/main-hero-section";
 
 export default function HomePage() {
   const { locale } = useLocale();
@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        <HeroSection />
+        <MainHeroSection />
 
         {/* Practice Areas Bar */}
         <PracticeAreasBar />

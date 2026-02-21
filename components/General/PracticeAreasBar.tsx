@@ -54,7 +54,7 @@ const PracticeAreasBar = () => {
         <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg border border-accent/20 flex items-center justify-center bg-accent/5 group-hover:border-accent/50 group-hover:bg-accent/15 transition-all duration-300">
           <area.icon className="w-4 h-4 lg:w-5 lg:h-5 text-accent/70 group-hover:text-accent transition-colors" />
         </div>
-        <span className="text-xs lg:text-sm font-medium text-white/80 whitespace-nowrap group-hover:text-accent transition-colors">
+        <span className="text-xs lg:text-sm font-medium text-foreground/70 whitespace-nowrap group-hover:text-accent transition-colors">
           {isRtl ? area.labelAr : area.labelEn}
         </span>
       </div>
@@ -78,14 +78,11 @@ const PracticeAreasBar = () => {
 
   return (
     <motion.div
-      className="relative z-20 bg-neutral-900 border-t border-accent/15"
+      className="relative z-20 bg-background border-y border-border/40 dark:border-border/80"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.9 }}
     >
-      {/* Subtle gold accent line at top */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-
       {/* Desktop: static layout */}
       <div className="hidden lg:block mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-5">
@@ -98,8 +95,8 @@ const PracticeAreasBar = () => {
       {/* Mobile/Tablet: infinite marquee */}
       <div className="lg:hidden overflow-hidden relative">
         {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-neutral-900 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-neutral-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
         <div className="practice-marquee-container py-4">
           <div
