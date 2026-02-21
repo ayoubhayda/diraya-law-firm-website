@@ -13,7 +13,7 @@ export function CTASection() {
   const { isOpen, openModal, closeModal } = useConsultationModal();
 
   return (
-    <section className="relative py-12 md:py-20 bg-[#060a12] text-white overflow-hidden">
+    <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
       {/* Subtle decorative line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
 
@@ -48,7 +48,7 @@ export function CTASection() {
           </motion.h2>
 
           <motion.p
-            className="text-sm md:text-lg text-white/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto"
+            className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -71,7 +71,7 @@ export function CTASection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/20 text-white hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
+              className="border-border text-foreground hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
             >
               {locale === "ar" ? "اتصل بنا" : "Call Us"}
               <Phone className="ms-2 h-4 w-4" />

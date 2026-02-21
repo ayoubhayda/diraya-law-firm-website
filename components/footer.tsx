@@ -107,7 +107,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#060a12] text-white">
+    <footer className="bg-zinc-100 dark:bg-zinc-950 text-foreground">
       <motion.div
         className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
         variants={containerVariants}
@@ -132,12 +132,20 @@ export function Footer() {
                   transition={{ duration: 0.3 }}
                 >
                   <Image
+                    src={lightLogo}
+                    alt="Diraya Logo"
+                    width={40}
+                    height={40}
+                    priority
+                    className="!w-auto !h-9 sm:!h-10 dark:hidden"
+                  />
+                  <Image
                     src={darkLogo}
                     alt="Diraya Logo"
                     width={40}
                     height={40}
                     priority
-                    className="!w-auto !h-9 sm:!h-10"
+                    className="!w-auto !h-9 sm:!h-10 hidden dark:block"
                   />
                 </motion.div>
               </div>
@@ -145,7 +153,7 @@ export function Footer() {
               {/* Logo Text */}
               <div className="hidden md:flex">
                 <span
-                  className={`text-2xl font-semibold ltr:font-bold leading-tight text-white transition-colors duration-300 ${locale === "ar" ? "font-logo-arabic text-[1.7rem]" : "font-serif capitalize "}`}
+                  className={`text-2xl font-semibold ltr:font-bold leading-tight text-foreground transition-colors duration-300 ${locale === "ar" ? "font-logo-arabic text-[1.7rem]" : "font-serif capitalize "}`}
                 >
                   {locale === "ar" ? "دراية" : "Diraya"}
                 </span>
@@ -153,7 +161,7 @@ export function Footer() {
             </motion.div>
 
             <motion.p
-              className="text-white/80 mb-4 md:mb-6 max-w-md mx-auto md:mx-0 leading-relaxed text-sm md:text-base"
+              className="text-foreground/70 mb-4 md:mb-6 max-w-md mx-auto md:mx-0 leading-relaxed text-sm md:text-base"
               variants={itemVariants}
             >
               {locale === "ar"
@@ -224,7 +232,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-white/80 hover:text-accent transition-colors duration-200"
+                      className="text-foreground/70 hover:text-accent transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -252,7 +260,7 @@ export function Footer() {
                   >
                     <Link
                       href={link.href}
-                      className="text-white/80 hover:text-accent transition-colors duration-200"
+                      className="text-foreground/70 hover:text-accent transition-colors duration-200"
                     >
                       {link.name}
                     </Link>
@@ -284,7 +292,7 @@ export function Footer() {
                     >
                       <Link
                         href={social.href}
-                        className="text-white/80 hover:text-accent transition-colors duration-200"
+                        className="text-foreground/70 hover:text-accent transition-colors duration-200"
                       >
                         <Icon className="h-5 w-5" />
                         <span className="sr-only">{social.name}</span>
@@ -319,7 +327,7 @@ export function Footer() {
                   >
                     <Link
                       href={social.href}
-                      className="text-white/80 hover:text-accent transition-colors duration-200"
+                      className="text-foreground/70 hover:text-accent transition-colors duration-200"
                     >
                       <Icon className="h-6 w-6" />
                       <span className="sr-only">{social.name}</span>
@@ -333,11 +341,11 @@ export function Footer() {
 
         {/* Copyright */}
         <motion.div
-          className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-zinc-700 text-white/20"
+          className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-border text-foreground/20"
           variants={itemVariants}
         >
           <motion.p
-            className="text-center text-white/60 text-xs md:text-sm"
+            className="text-center text-foreground/60 text-xs md:text-sm"
             variants={itemVariants}
           >
             © {currentYear} {locale === "ar" ? "دراية" : "DIRAYA"}.{" "}

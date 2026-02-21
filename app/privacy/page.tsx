@@ -198,7 +198,7 @@ export default function PrivacyPage() {
       <Navbar />
       <main>
         {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -220,7 +220,7 @@ export default function PrivacyPage() {
                 {locale === "ar" ? "سياسة الخصوصية" : "Privacy Policy"}
               </motion.h1>
               <motion.p
-                className="text-lg text-white/70 leading-relaxed mb-4"
+                className="text-lg text-foreground/80 leading-relaxed mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -230,7 +230,7 @@ export default function PrivacyPage() {
                   : "We are committed to protecting your privacy and the security of your personal information"}
               </motion.p>
               <motion.p
-                className="text-sm text-white/50"
+                className="text-sm text-foreground/60"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}

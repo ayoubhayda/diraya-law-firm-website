@@ -108,7 +108,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="py-10 md:py-20 bg-[#060a12] text-white">
+        <section className="py-10 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
               <motion.div
@@ -145,7 +145,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   {service.title[locale]}
                 </motion.h1>
                 <motion.p
-                  className="text-sm md:text-xl text-white/90 leading-relaxed text-pretty mb-4 md:mb-8"
+                  className="text-sm md:text-xl text-foreground/80 leading-relaxed text-pretty mb-4 md:mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -180,7 +180,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="border-zinc-700 dark:border-zinc-700 text-white hover:border-accent dark:hover:border-accent hover:text-accent bg-transparent hover:bg-transparent"
+                      className="border-border text-foreground hover:border-accent hover:text-accent bg-transparent hover:bg-transparent"
                     >
                       {locale === "ar" ? "اتصل الآن" : "Call Now"}
                       <Phone className="ml-2 h-5 w-5" />
@@ -225,7 +225,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="text-center p-3 md:p-6 bg-zinc-700/60 rounded-lg"
+                      className="text-center p-3 md:p-6 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-lg"
                       variants={scaleIn}
                       whileHover={{ scale: 1.05, y: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}
@@ -234,7 +234,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                       <div className="text-base md:text-2xl font-bold text-accent">
                         {stat.value}
                       </div>
-                      <div className="text-xs md:text-sm text-white/80">
+                      <div className="text-xs md:text-sm text-foreground/80">
                         {stat.label}
                       </div>
                     </motion.div>
@@ -719,7 +719,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         )}
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div
@@ -741,7 +741,7 @@ export default function ServicePage({ params }: ServicePageProps) {
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-serif text-balance">
               {locale === "ar" ? "جاهز للبدء؟" : "Ready to Get Started?"}
             </h2>
-            <p className="text-sm md:text-lg text-white/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
+            <p className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
               {locale === "ar"
                 ? "تواصل معنا اليوم للحصول على استشارة قانونية مجانية ومناقشة احتياجاتكم"
                 : "Contact us today for a free legal consultation and discuss your needs"}
@@ -760,7 +760,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 text-white hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
+                className="border-border text-foreground hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
               >
                 {locale === "ar" ? "اتصل بنا" : "Call Us"}
                 <Phone className="ms-2 h-4 w-4" />

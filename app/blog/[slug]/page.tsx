@@ -269,7 +269,7 @@ export default function ArticlePage() {
         )}
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div
@@ -293,7 +293,7 @@ export default function ArticlePage() {
                 ? "هل تحتاج استشارة قانونية؟"
                 : "Need Legal Consultation?"}
             </h2>
-            <p className="text-sm md:text-lg text-white/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
+            <p className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
               {locale === "ar"
                 ? "احصل على استشارة قانونية متخصصة من خبرائنا لحل مشاكلك القانونية"
                 : "Get specialized legal consultation from our experts to solve your legal problems"}

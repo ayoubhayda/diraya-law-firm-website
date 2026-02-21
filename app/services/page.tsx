@@ -203,7 +203,7 @@ export default function ServicesPage() {
       <Navbar />
       <main>
         {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -225,7 +225,7 @@ export default function ServicesPage() {
                 {getTranslation(locale, "servicesTitle")}
               </motion.h1>
               <motion.p
-                className="text-lg text-white/70 leading-relaxed"
+                className="text-lg text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -489,7 +489,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div
@@ -511,7 +511,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 font-serif text-balance">
               {locale === "ar" ? "جاهز للبدء؟" : "Ready to Get Started?"}
             </h2>
-            <p className="text-sm md:text-lg text-white/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
+            <p className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
               {locale === "ar"
                 ? "تواصل معنا اليوم للحصول على استشارة قانونية مجانية ومناقشة احتياجاتكم"
                 : "Contact us today for a free legal consultation and discuss your needs"}
@@ -522,7 +522,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/20 text-white hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
+                className="border-border text-foreground hover:border-accent hover:text-accent bg-transparent hover:bg-transparent cursor-pointer"
               >
                 {locale === "ar" ? "اتصل بنا" : "Call Us"}
                 <Phone className="ms-2 h-4 w-4" />

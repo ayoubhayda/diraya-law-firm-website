@@ -112,7 +112,7 @@ export default function BlogPage() {
       <Navbar />
       <main>
         {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -134,7 +134,7 @@ export default function BlogPage() {
                 {locale === "ar" ? "المدونة القانونية" : "Legal Blog"}
               </motion.h1>
               <motion.p
-                className="text-lg text-white/70 leading-relaxed"
+                className="text-lg text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -410,7 +410,7 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-12 md:py-20 bg-[#060a12] text-white relative overflow-hidden">
+        <section className="py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div
@@ -439,7 +439,7 @@ export default function BlogPage() {
                 : "Subscribe to Legal Newsletter"}
             </motion.h2>
             <motion.p
-              className="text-sm md:text-xl text-white/90 mb-5 md:mb-8 max-w-3xl mx-auto leading-relaxed text-pretty px-2 md:px-0"
+              className="text-sm md:text-xl text-foreground/80 mb-5 md:mb-8 max-w-3xl mx-auto leading-relaxed text-pretty px-2 md:px-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -464,7 +464,7 @@ export default function BlogPage() {
                 placeholder={
                   locale === "ar" ? "بريدك الإلكتروني" : "Your email address"
                 }
-                className="bg-white/10 border-white/30 text-white placeholder:text-white/60 focus:border-accent/50 focus:ring-accent/20 h-12"
+                className="bg-foreground/5 border-border text-foreground placeholder:text-foreground/50 focus:border-accent/50 focus:ring-accent/20 h-12"
                 required
               />
               <Button

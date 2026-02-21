@@ -97,7 +97,7 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-[#060a12] text-white overflow-hidden">
+        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 {locale === "ar" ? "نحن هنا لمساعدتك" : "We're Here to Help"}
               </motion.h1>
               <motion.p
-                className="text-base md:text-lg text-white/70 leading-relaxed"
+                className="text-base md:text-lg text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
