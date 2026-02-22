@@ -15,11 +15,13 @@ import {
   Shield,
   Target,
   Handshake,
+  Info,
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import ServiceConsultationModelButton from "@/components/service-consultation-model-button";
 import { motion } from "framer-motion";
+import { SectionSeparator } from "@/components/section-separator";
 
 export default function AboutPage() {
   const { locale } = useLocale();
@@ -59,39 +61,39 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "2008",
-      title: locale === "ar" ? "بداية المسيرة المهنية" : "Started Legal Career",
+      year: "2010",
+      title: locale === "ar" ? "التخرج من كلية الحقوق" : "Law Degree",
       description:
         locale === "ar"
-          ? "تخرجت من كلية الحقوق بامتياز"
-          : "Graduated from Law School with Honors",
+          ? "الإجازة في القانون الخاص من جامعة محمد الخامس بالرباط"
+          : "Private Law degree from Mohammed V University, Rabat",
       icon: GraduationCap,
     },
     {
-      year: "2012",
-      title: locale === "ar" ? "تأسيس المكتب" : "Founded Law Firm",
+      year: "2013",
+      title: locale === "ar" ? "التسجيل في هيئة المحامين" : "Bar Admission",
       description:
         locale === "ar"
-          ? "افتتاح مكتب المحاماة المتخصص"
-          : "Opened Specialized Law Practice",
+          ? "القيد في هيئة المحامين والبدء في ممارسة المهنة"
+          : "Admitted to the Bar and began practicing law",
       icon: Scale,
     },
     {
-      year: "2018",
-      title: locale === "ar" ? "جائزة التميز" : "Excellence Award",
+      year: "2017",
+      title: locale === "ar" ? "تأسيس المكتب" : "Founded the Firm",
       description:
         locale === "ar"
-          ? "حصل على جائزة أفضل محامي للعام"
-          : "Received Lawyer of the Year Award",
-      icon: Award,
+          ? "افتتاح مكتب دراية للمحاماة والاستشارات القانونية"
+          : "Opened Diraya Law Firm for legal practice and consulting",
+      icon: Scale,
     },
     {
-      year: "2026",
-      title: locale === "ar" ? "500+ عميل راضي" : "500+ Satisfied Clients",
+      year: "2025",
+      title: locale === "ar" ? "أكثر من 500 موكل" : "500+ Clients Served",
       description:
         locale === "ar"
-          ? "وصل عدد العملاء الراضين إلى +500"
-          : "Reached 500+ Satisfied Clients Milestone",
+          ? "خدمة أكثر من 500 موكل في مختلف القضايا القانونية"
+          : "Served over 500 clients across various legal matters",
       icon: Users,
     },
   ];
@@ -148,22 +150,25 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
-          {/* Subtle decorative line */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <motion.p
-                className="text-accent text-sm font-medium tracking-[0.3em] uppercase mb-6"
+        {/* Hero Section — Elegant, minimal, matching main hero */}
+        <section className="relative pt-10 pb-2 lg:pt-16 bg-background overflow-hidden">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              {/* Badge pill */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/[0.06] mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {locale === "ar" ? "من نحن" : "About Us"}
-              </motion.p>
+                <Info className="w-3.5 h-3.5 text-accent" />
+                <span className="text-xs font-medium text-accent tracking-wide">
+                  {locale === "ar" ? "من نحن" : "About Us"}
+                </span>
+              </motion.div>
+
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6 text-balance"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 md:mb-6 text-balance"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -171,7 +176,7 @@ export default function AboutPage() {
                 {getTranslation(locale, "aboutTitle")}
               </motion.h1>
               <motion.p
-                className="text-lg text-foreground/80 leading-relaxed"
+                className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -180,6 +185,18 @@ export default function AboutPage() {
                   ? "تعرف على قصة نجاحي وخبرتي في تقديم أفضل الخدمات القانونية"
                   : "Learn about my success story and expertise in providing the best legal services"}
               </motion.p>
+
+              {/* Decorative divider */}
+              <motion.div
+                className="flex items-center justify-center gap-3 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/30" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-accent/40" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/30" />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -336,8 +353,11 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Separator Section */}
+        <SectionSeparator variant="default" />
+
         {/* Timeline Section */}
-        <section className="py-12 md:py-24 bg-muted/15 relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-background relative overflow-hidden">
           {/* Background Decoration */}
           <motion.div
             className="absolute inset-0 opacity-5"
@@ -371,8 +391,8 @@ export default function AboutPage() {
               </h2>
               <p className="text-sm md:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-pretty px-2 md:px-0">
                 {locale === "ar"
-                  ? "تعرف على أهم المحطات في مسيرتي المهنية والإنجازات التي حققتها عبر السنين"
-                  : "Discover the key milestones in my professional journey and the achievements I've accomplished over the years"}
+                  ? "من مقاعد الدراسة إلى قاعات المحاكم، مسيرة بنيت على العلم والتفاني والالتزام بخدمة العدالة"
+                  : "From the classroom to the courtroom, a journey built on knowledge, dedication, and a commitment to serving justice"}
               </p>
             </motion.div>
 
@@ -551,7 +571,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-background border-t border-border text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div

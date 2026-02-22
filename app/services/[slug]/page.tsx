@@ -35,6 +35,7 @@ import { getServiceBySlug, getRelatedServices } from "@/lib/services";
 import { ServiceConsultationModal } from "@/components/service-consultation-modal";
 import { useState, use } from "react";
 import { motion } from "framer-motion";
+import { SectionSeparator } from "@/components/section-separator";
 
 const iconMap = {
   Users,
@@ -104,7 +105,7 @@ export default function ServicePage({ params }: ServicePageProps) {
   const IconComponent = iconMap[service.icon as keyof typeof iconMap];
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-clip">
       <Navbar />
       <main>
         {/* Hero Section */}
@@ -423,7 +424,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         <Separator />
 
         {/* Process Section */}
-        <section className="py-12 md:py-24 bg-muted/15 relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-background relative overflow-hidden">
           {/* Background Decoration */}
           <motion.div
             className="absolute inset-0 opacity-5"
@@ -585,21 +586,11 @@ export default function ServicePage({ params }: ServicePageProps) {
           </div>
         </section>
 
+        <SectionSeparator variant="default" />
+
         {/* Related Services */}
         {relatedServices.length > 0 && (
-          <section className="py-10 md:py-20 bg-gradient-to-br from-background via-muted/20 to-background relative overflow-hidden">
-            {/* Background Decoration */}
-            <motion.div
-              className="absolute inset-0 opacity-5"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 0.05 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <div className="absolute top-1/3 right-1/3 w-72 h-72 bg-accent rounded-full blur-3xl" />
-              <div className="absolute bottom-1/3 left-1/3 w-64 h-64 bg-primary rounded-full blur-3xl" />
-            </motion.div>
-
+          <section className="py-10 md:py-20 bg-background relative overflow-hidden">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
               <motion.div
                 className="text-center mb-8 md:mb-20"
@@ -719,7 +710,7 @@ export default function ServicePage({ params }: ServicePageProps) {
         )}
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-background border-t border-border text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div

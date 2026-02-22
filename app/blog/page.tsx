@@ -26,6 +26,8 @@ import { useLocale } from "@/hooks/use-locale-context";
 import Link from "next/link";
 import { getAllArticles } from "@/lib/articles";
 import { motion } from "framer-motion";
+import { SectionSeparator } from "@/components/section-separator";
+import { BookOpen } from "lucide-react";
 
 export default function BlogPage() {
   const { locale } = useLocale();
@@ -50,6 +52,8 @@ export default function BlogPage() {
     { id: "criminal", name: locale === "ar" ? "الجنائي" : "Criminal" },
   ];
 
+  // sort asc by id
+  allArticles.sort((a, b) => a.id - b.id);
   const filteredPosts = allArticles.filter((article) => {
     const title = locale === "ar" ? article.titleAr : article.titleEn;
     const matchesSearch = title
@@ -111,22 +115,25 @@ export default function BlogPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
-          {/* Subtle decorative line */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <motion.p
-                className="text-accent text-sm font-medium tracking-[0.3em] uppercase mb-6"
+        {/* Hero Section — Elegant, minimal, matching main hero */}
+        <section className="relative pt-10 pb-2 lg:pt-16 bg-background overflow-hidden">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              {/* Badge pill */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/[0.06] mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {locale === "ar" ? "المدونة" : "Blog"}
-              </motion.p>
+                <BookOpen className="w-3.5 h-3.5 text-accent" />
+                <span className="text-xs font-medium text-accent tracking-wide">
+                  {locale === "ar" ? "المدونة" : "Blog"}
+                </span>
+              </motion.div>
+
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6 text-balance"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 md:mb-6 text-balance"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -134,7 +141,7 @@ export default function BlogPage() {
                 {locale === "ar" ? "المدونة القانونية" : "Legal Blog"}
               </motion.h1>
               <motion.p
-                className="text-lg text-foreground/80 leading-relaxed"
+                className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -143,61 +150,25 @@ export default function BlogPage() {
                   ? "مقالات ونصائح قانونية متخصصة لمساعدتكم في فهم القوانين والإجراءات القانونية"
                   : "Specialized legal articles and tips to help you understand laws and legal procedures"}
               </motion.p>
+
+              {/* Decorative divider */}
+              <motion.div
+                className="flex items-center justify-center gap-3 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/30" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-accent/40" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/30" />
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* Blog Articles Section */}
-        <section className="py-10 md:py-20 bg-muted/15 relative overflow-hidden">
-          {/* Background Decoration */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary rounded-full blur-3xl" />
-          </div>
-
+        <section className="py-10 pt-7 md:py-20 md:pt-8 bg-background relative overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
-            {/* Section Header */}
-            <motion.div
-              className="text-center mb-8 md:mb-16"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                <span className="text-sm font-medium text-accent">
-                  {locale === "ar" ? "المقالات القانونية" : "Legal Articles"}
-                </span>
-              </motion.div>
-              <motion.h2
-                className="text-xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2 md:mb-4 font-serif text-balance"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {locale === "ar" ? "مقالاتنا القانونية" : "Our Legal Articles"}
-              </motion.h2>
-              <motion.p
-                className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed text-pretty px-2 md:px-0"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                {locale === "ar"
-                  ? "اكتشف مجموعة واسعة من المقالات القانونية المتخصصة وابحث عن ما يهمك"
-                  : "Discover a wide range of specialized legal articles and find what interests you"}
-              </motion.p>
-            </motion.div>
-
             {/* Search and Filter Controls */}
             <motion.div
               className="max-w-4xl mx-auto mb-8 md:mb-14"
@@ -206,12 +177,12 @@ export default function BlogPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.3 }}
             >
-              <div className="relative bg-white/70 dark:bg-gray-900/60 backdrop-blur-xl border border-gray-200/80 dark:border-gray-700/50 rounded-2xl p-5 md:p-8 overflow-hidden">
+              <div className="relative bg-background/70 dark:bg-background/60 backdrop-blur-xl border border-border/80 dark:border-border/50 rounded-2xl p-5 md:p-8 overflow-hidden">
                 <div className="flex flex-col gap-6">
                   {/* Search Input */}
                   <div className="relative group w-full">
                     <div className="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 flex items-center pl-4 rtl:pl-0 rtl:pr-4 pointer-events-none">
-                      <Search className="h-[18px] w-[18px] text-gray-400 dark:text-gray-500 group-focus-within:text-accent transition-colors duration-300" />
+                      <Search className="h-[18px] w-[18px] text-muted-foreground group-focus-within:text-accent transition-colors duration-300" />
                     </div>
                     <Input
                       type="text"
@@ -222,17 +193,17 @@ export default function BlogPage() {
                       }
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-11 rtl:pl-4 rtl:pr-11 h-12 md:h-[52px] text-sm md:text-base bg-gray-50/80 dark:bg-gray-800/50 border-gray-200/80 dark:border-gray-700/50 rounded-xl focus:border-accent/50 focus:ring-2 focus:ring-accent/10 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all duration-300"
+                      className="w-full pl-11 rtl:pl-4 rtl:pr-11 h-12 md:h-[52px] text-sm md:text-base bg-surface dark:bg-surface border-border/80 dark:border-border/50 rounded-xl focus:border-accent/50 focus:ring-2 focus:ring-accent/10 placeholder:text-muted-foreground transition-all duration-300"
                     />
                   </div>
 
                   {/* Separator */}
                   <div className="flex items-center gap-3">
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent" />
-                    <span className="text-[11px] font-medium tracking-widest uppercase text-gray-400 dark:text-gray-500">
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+                    <span className="text-[11px] font-medium tracking-widest uppercase text-muted-foreground">
                       {locale === "ar" ? "التصنيفات" : "Categories"}
                     </span>
-                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent" />
+                    <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
                   </div>
 
                   {/* Category Filters */}
@@ -247,7 +218,7 @@ export default function BlogPage() {
                           ${
                             selectedCategory === category.id
                               ? "bg-accent text-white shadow-[0_2px_12px_-2px_rgba(var(--accent-rgb,180,130,64),0.4)]"
-                              : "bg-gray-100/80 dark:bg-gray-800/60 text-gray-600 dark:text-gray-400 hover:bg-gray-200/80 dark:hover:bg-gray-700/60 hover:text-gray-900 dark:hover:text-gray-200 border border-gray-200/60 dark:border-gray-700/40 hover:border-gray-300 dark:hover:border-gray-600"
+                              : "bg-surface dark:bg-surface text-surface-foreground hover:bg-muted dark:hover:bg-muted hover:text-foreground border border-border/60 dark:border-border/40 hover:border-border dark:hover:border-border"
                           }
                         `}
                       >
@@ -260,7 +231,7 @@ export default function BlogPage() {
 
               {/* Results Count Bar */}
               <div className="flex items-center justify-between mt-5 px-1">
-                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium">
+                <p className="text-xs md:text-sm text-muted-foreground font-medium">
                   {filteredPosts.length > 0 ? (
                     <>
                       {locale === "ar"
@@ -320,7 +291,7 @@ export default function BlogPage() {
                   {displayedPosts.map((article, index) => (
                     <article
                       key={article.id}
-                      className="group bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
+                      className="group bg-card dark:bg-card border border-border dark:border-border rounded-2xl overflow-hidden hover:border-accent/30 dark:hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
                     >
                       {/* Image Section */}
                       <div className="relative aspect-[4/3] md:aspect-[4/3] overflow-hidden">
@@ -332,7 +303,7 @@ export default function BlogPage() {
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute top-3 left-3 rtl:left-auto rtl:right-3">
-                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-white/90 dark:bg-gray-900/90 text-gray-700 dark:text-gray-300 backdrop-blur-sm">
+                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-background/90 dark:bg-background/90 text-foreground/80 backdrop-blur-sm">
                             {
                               categories.find(
                                 (cat) => cat.id === article.category,
@@ -345,7 +316,7 @@ export default function BlogPage() {
                       {/* Content Section */}
                       <div className="p-4 md:p-6 space-y-3 md:space-y-4">
                         {/* Meta Information */}
-                        <div className="flex items-center gap-4 text-xs text-gray-500 dark:text-gray-400">
+                        <div className="flex items-center gap-4 text-xs text-muted-foreground">
                           <div className="flex items-center gap-1.5">
                             <Calendar className="h-3.5 w-3.5" />
                             {formatDate(article.date)}
@@ -359,12 +330,12 @@ export default function BlogPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white leading-tight line-clamp-1 group-hover:text-accent transition-colors duration-200">
+                        <h3 className="text-base md:text-lg font-semibold text-foreground leading-tight line-clamp-1 group-hover:text-accent transition-colors duration-200">
                           {locale === "ar" ? article.titleAr : article.titleEn}
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-2">
+                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed line-clamp-2">
                           {locale === "ar"
                             ? article.excerptAr
                             : article.excerptEn}
@@ -410,7 +381,7 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground relative overflow-hidden">
+        <section className="py-12 md:py-20 bg-background border-t border-border text-foreground relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div
@@ -491,8 +462,8 @@ export default function BlogPage() {
       <Dialog open={showSuccessModal} onOpenChange={setShowSuccessModal}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader className="text-center">
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/20">
-              <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success-light dark:bg-success/20">
+              <CheckCircle className="h-8 w-8 text-success" />
             </div>
             <DialogTitle className="text-xl font-semibold text-center">
               {locale === "ar"

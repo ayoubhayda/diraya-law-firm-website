@@ -30,6 +30,8 @@ import { useConsultationModal } from "@/hooks/use-consultation-modal";
 import { FreeConsultationModelButton } from "@/components/free-consultation-model-button";
 import { ConsultationModal } from "@/components/consultation-modal";
 import { motion } from "framer-motion";
+import { SectionSeparator } from "@/components/section-separator";
+import { Scale } from "lucide-react";
 
 export default function ServicesPage() {
   const { locale } = useLocale();
@@ -202,22 +204,25 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-background">
       <Navbar />
       <main>
-        {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
-          {/* Subtle decorative line */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <motion.p
-                className="text-accent text-sm font-medium tracking-[0.3em] uppercase mb-6"
+        {/* Hero Section — Elegant, minimal, matching main hero */}
+        <section className="relative pt-10 pb-2 lg:pt-16 bg-background overflow-hidden">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              {/* Badge pill */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/[0.06] mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {locale === "ar" ? "خدماتنا" : "Our Services"}
-              </motion.p>
+                <Scale className="w-3.5 h-3.5 text-accent" />
+                <span className="text-xs font-medium text-accent tracking-wide">
+                  {locale === "ar" ? "خدماتنا" : "Our Services"}
+                </span>
+              </motion.div>
+
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-6 text-balance"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 md:mb-6 text-balance"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -225,7 +230,7 @@ export default function ServicesPage() {
                 {getTranslation(locale, "servicesTitle")}
               </motion.h1>
               <motion.p
-                className="text-lg text-foreground/80 leading-relaxed"
+                className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -234,6 +239,18 @@ export default function ServicesPage() {
                   ? "نقدم مجموعة شاملة من الخدمات القانونية المتخصصة لتلبية جميع احتياجاتكم القانونية"
                   : "We offer a comprehensive range of specialized legal services to meet all your legal needs"}
               </motion.p>
+
+              {/* Decorative divider */}
+              <motion.div
+                className="flex items-center justify-center gap-3 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/30" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-accent/40" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/30" />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -327,8 +344,10 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        <SectionSeparator variant="default" />
+
         {/* Process Section */}
-        <section className="py-12 md:py-24 bg-muted/15 relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-background relative overflow-hidden">
           {/* Background Decoration */}
           <motion.div
             className="absolute inset-0 opacity-5"
@@ -489,7 +508,7 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
+        <section className="relative py-12 md:py-20 bg-background border-t border-border text-foreground overflow-hidden">
           {/* Subtle decorative line */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
           <motion.div

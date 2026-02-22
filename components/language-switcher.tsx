@@ -46,7 +46,7 @@ export function LanguageSwitcher() {
       <Button
         variant="outline"
         disabled
-        className="bg-transparent border-border/50 dark:border-zinc-700 shadow-none"
+        className="bg-transparent border-border/50 dark:border-border shadow-none"
       >
         <Languages className="h-4 w-4" />
         <span className="sr-only">Select language</span>
@@ -59,7 +59,7 @@ export function LanguageSwitcher() {
       <Button
         variant="outline"
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-transparent border-border/50 dark:border-zinc-700 hover:border-accent/50 hover:bg-accent/5 dark:hover:bg-accent/20 dark:hover:text-white dark:hover:border-accent/30 cursor-pointer transition-all duration-200 shadow-none"
+        className="bg-transparent border-border/50 dark:border-border hover:border-accent/50 hover:bg-accent/5 dark:hover:bg-accent/20 dark:hover:text-white dark:hover:border-accent/30 cursor-pointer transition-all duration-200 shadow-none"
       >
         <Languages className="h-4 w-4" />
         <span className="sr-only">Select language</span>

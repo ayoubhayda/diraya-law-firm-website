@@ -107,7 +107,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-zinc-100 dark:bg-zinc-950 text-foreground">
+    <footer className="bg-background border-t border-border text-foreground">
       <motion.div
         className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
         variants={containerVariants}

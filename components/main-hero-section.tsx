@@ -149,7 +149,7 @@ export function MainHeroSection() {
                   size="lg"
                   variant="outline"
                   onClick={() => (window.location.href = "/services")}
-                  className="border-border/60 text-foreground hover:border-accent/40 hover:bg-accent/[0.04] text-sm sm:text-base px-7 sm:px-8 py-3 rounded-full transition-all duration-300 shadow-none cursor-pointer"
+                  className="border-border/60 text-foreground hover:border-accent/40 dark:hover:text-white hover:bg-accent/[0.04] dark:hover:bg-accent/7 text-sm sm:text-base px-7 sm:px-8 py-3 rounded-full transition-all duration-300 shadow-none cursor-pointer"
                 >
                   {locale === "ar" ? "خدماتنا" : "Our Services"}
                   <ArrowIcon className="ms-2 h-4 w-4" />

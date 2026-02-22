@@ -114,7 +114,7 @@ export function Navbar() {
               <Button
                 variant="outline"
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-transparent border-border/50 dark:border-zinc-700 hover:border-accent/50 hover:bg-accent/5 dark:hover:bg-accent/20 dark:hover:text-white dark:hover:border-accent/30 cursor-pointer transition-all duration-200 shadow-none"
+                className="bg-transparent border-border/50 dark:border-border hover:border-accent/50 hover:bg-accent/5 dark:hover:bg-accent/20 dark:hover:text-white dark:hover:border-accent/30 cursor-pointer transition-all duration-200 shadow-none"
               >
                 {isOpen ? (
                   <X className="h-5 w-5" />

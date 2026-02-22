@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { motion } from "framer-motion";
+import { SectionSeparator } from "@/components/section-separator";
 
 export default function ContactPage() {
   const { locale } = useLocale();
@@ -96,22 +97,25 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
       <main>
-        {/* Hero Section — Dark, elegant, minimal */}
-        <section className="relative py-12 lg:py-16 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
-          {/* Subtle decorative line */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <motion.p
-                className="text-accent text-sm font-medium tracking-[0.3em] uppercase mb-6"
+        {/* Hero Section — Elegant, minimal, matching main hero */}
+        <section className="relative pt-10 pb-2 lg:pt-16 bg-background overflow-hidden">
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto">
+              {/* Badge pill */}
+              <motion.div
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/[0.06] mb-6 sm:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                {locale === "ar" ? "تواصل معنا" : "Get in Touch"}
-              </motion.p>
+                <Phone className="w-3.5 h-3.5 text-accent" />
+                <span className="text-xs font-medium text-accent tracking-wide">
+                  {locale === "ar" ? "تواصل معنا" : "Get in Touch"}
+                </span>
+              </motion.div>
+
               <motion.h1
-                className="text-3xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 md:mb-6 text-balance"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-serif mb-4 md:mb-6 text-balance"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
@@ -119,7 +123,7 @@ export default function ContactPage() {
                 {locale === "ar" ? "نحن هنا لمساعدتك" : "We're Here to Help"}
               </motion.h1>
               <motion.p
-                className="text-base md:text-lg text-foreground/80 leading-relaxed"
+                className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -128,6 +132,18 @@ export default function ContactPage() {
                   ? "لا تتردد في التواصل معنا للحصول على استشارة قانونية متخصصة"
                   : "Don't hesitate to reach out for specialized legal consultation"}
               </motion.p>
+
+              {/* Decorative divider */}
+              <motion.div
+                className="flex items-center justify-center gap-3 mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/30" />
+                <div className="w-1.5 h-1.5 rotate-45 bg-accent/40" />
+                <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/30" />
+              </motion.div>
             </div>
           </div>
         </section>
@@ -291,8 +307,8 @@ export default function ContactPage() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                     >
-                      <div className="w-16 h-16 rounded-md bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
-                        <CheckCircle className="w-7 h-7 text-emerald-500" />
+                      <div className="w-16 h-16 rounded-md bg-success/10 border border-success/20 flex items-center justify-center mb-6">
+                        <CheckCircle className="w-7 h-7 text-success" />
                       </div>
                       <h3 className="text-2xl font-bold font-serif text-foreground mb-2">
                         {locale === "ar"

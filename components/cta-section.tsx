@@ -13,7 +13,7 @@ export function CTASection() {
   const { isOpen, openModal, closeModal } = useConsultationModal();
 
   return (
-    <section className="relative py-12 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground overflow-hidden">
+    <section className="relative py-12 md:py-20 bg-background border-t border-border text-foreground overflow-hidden">
       {/* Subtle decorative line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-8 lg:h-12 bg-gradient-to-b from-transparent via-accent/40 to-transparent" />
 

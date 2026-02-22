@@ -85,10 +85,10 @@ export function ConsultationModal({ isOpen, onClose }: ConsultationModalProps) {
         >
           <div className="text-center py-8 px-6">
             <div className="relative mx-auto mb-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800/30">
-                <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-success-light border-2 border-success-border">
+                <CheckCircle className="h-8 w-8 text-success" />
               </div>
-              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-green-500 animate-ping" />
+              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-success animate-ping" />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-3">
               {locale === "ar"

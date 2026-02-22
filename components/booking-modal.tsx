@@ -1,27 +1,50 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
-import { useLocale } from "@/hooks/use-locale-context"
-import { Calendar, Phone, Mail, MessageCircle, CheckCircle, X, User, Clock, FileText, ArrowRight, ArrowLeft } from "lucide-react"
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { useLocale } from "@/hooks/use-locale-context";
+import {
+  Calendar,
+  Phone,
+  Mail,
+  MessageCircle,
+  CheckCircle,
+  X,
+  User,
+  Clock,
+  FileText,
+  ArrowRight,
+  ArrowLeft,
+} from "lucide-react";
 
 interface BookingModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
-  const { locale } = useLocale()
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [currentStep, setCurrentStep] = useState(1)
+  const { locale } = useLocale();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -32,18 +55,18 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
     consultationType: "",
     message: "",
     agreedToTerms: false,
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Here you would typically send the data to your backend
-    console.log("Booking form submitted:", formData)
-    setIsSubmitted(true)
+    console.log("Booking form submitted:", formData);
+    setIsSubmitted(true);
 
     // Reset form after 3 seconds and close modal
     setTimeout(() => {
-      setIsSubmitted(false)
-      setCurrentStep(1)
+      setIsSubmitted(false);
+      setCurrentStep(1);
       setFormData({
         name: "",
         email: "",
@@ -54,29 +77,30 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         consultationType: "",
         message: "",
         agreedToTerms: false,
-      })
-      onClose()
-    }, 3000)
-  }
+      });
+      onClose();
+    }, 3000);
+  };
 
   const handleNextStep = () => {
     if (currentStep < 2) {
-      setCurrentStep(currentStep + 1)
+      setCurrentStep(currentStep + 1);
     }
-  }
+  };
 
   const handlePrevStep = () => {
     if (currentStep > 1) {
-      setCurrentStep(currentStep - 1)
+      setCurrentStep(currentStep - 1);
     }
-  }
+  };
 
   const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [field]: value }))
-  }
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
 
-  const isStep1Valid = formData.name && formData.email && formData.phone && formData.preferredDate
-  const isStep2Valid = formData.agreedToTerms
+  const isStep1Valid =
+    formData.name && formData.email && formData.phone && formData.preferredDate;
+  const isStep2Valid = formData.agreedToTerms;
 
   if (isSubmitted) {
     return (
@@ -84,13 +108,15 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         <DialogContent className="sm:max-w-md [&>button]:hidden">
           <div className="text-center py-8 px-6">
             <div className="relative mx-auto mb-6">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800/30">
-                <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-success-light border-2 border-success-border">
+                <CheckCircle className="h-8 w-8 text-success" />
               </div>
-              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-green-500 animate-ping" />
+              <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-success animate-ping" />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-3">
-              {locale === "ar" ? "تم حجز الموعد بنجاح!" : "Appointment Booked Successfully!"}
+              {locale === "ar"
+                ? "تم حجز الموعد بنجاح!"
+                : "Appointment Booked Successfully!"}
             </h3>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto mb-4">
               {locale === "ar"
@@ -100,13 +126,15 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
             <div className="pt-4 border-t border-border/50">
               <p className="text-xs text-muted-foreground">
                 {locale === "ar" ? "رقم الحجز: " : "Booking ID: "}
-                <span className="font-mono text-accent">#{Date.now().toString().slice(-6)}</span>
+                <span className="font-mono text-accent">
+                  #{Date.now().toString().slice(-6)}
+                </span>
               </p>
             </div>
           </div>
         </DialogContent>
       </Dialog>
-    )
+    );
   }
 
   return (
@@ -121,10 +149,14 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
               </div>
               <div>
                 <DialogTitle className="text-xl font-semibold text-foreground">
-                  {locale === "ar" ? "حجز موعد استشارة" : "Book Consultation Appointment"}
+                  {locale === "ar"
+                    ? "حجز موعد استشارة"
+                    : "Book Consultation Appointment"}
                 </DialogTitle>
                 <p className="text-sm text-muted-foreground">
-                  {locale === "ar" ? "احجز موعدكم للحصول على استشارة قانونية مهنية" : "Schedule your appointment for professional legal consultation"}
+                  {locale === "ar"
+                    ? "احجز موعدكم للحصول على استشارة قانونية مهنية"
+                    : "Schedule your appointment for professional legal consultation"}
                 </p>
               </div>
             </div>
@@ -150,20 +182,31 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <div className="flex items-center gap-2 mb-3">
                     <User className="h-4 w-4 text-accent" />
                     <h3 className="text-lg font-medium text-foreground">
-                      {locale === "ar" ? "المعلومات الشخصية" : "Personal Information"}
+                      {locale === "ar"
+                        ? "المعلومات الشخصية"
+                        : "Personal Information"}
                     </h3>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="name" className="text-sm font-medium text-foreground">
+                      <Label
+                        htmlFor="name"
+                        className="text-sm font-medium text-foreground"
+                      >
                         {locale === "ar" ? "الاسم الكامل" : "Full Name"} *
                       </Label>
                       <Input
                         id="name"
                         value={formData.name}
-                        onChange={(e) => handleInputChange("name", e.target.value)}
-                        placeholder={locale === "ar" ? "أدخل اسمكم الكامل" : "Enter your full name"}
+                        onChange={(e) =>
+                          handleInputChange("name", e.target.value)
+                        }
+                        placeholder={
+                          locale === "ar"
+                            ? "أدخل اسمكم الكامل"
+                            : "Enter your full name"
+                        }
                         className="h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 text-start rtl:text-right"
                         dir={locale === "ar" ? "rtl" : "ltr"}
                         required
@@ -171,32 +214,53 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="email" className="text-sm font-medium text-foreground">
-                        {locale === "ar" ? "البريد الإلكتروني" : "Email Address"} *
+                      <Label
+                        htmlFor="email"
+                        className="text-sm font-medium text-foreground"
+                      >
+                        {locale === "ar"
+                          ? "البريد الإلكتروني"
+                          : "Email Address"}{" "}
+                        *
                       </Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
-                        placeholder={locale === "ar" ? "أدخل بريدكم الإلكتروني" : "Enter your email address"}
+                        onChange={(e) =>
+                          handleInputChange("email", e.target.value)
+                        }
+                        placeholder={
+                          locale === "ar"
+                            ? "أدخل بريدكم الإلكتروني"
+                            : "Enter your email address"
+                        }
                         className="h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 text-start rtl:text-right"
                         dir={locale === "ar" ? "rtl" : "ltr"}
                         required
                       />
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-col gap-2">
-                    <Label htmlFor="phone" className="text-sm font-medium text-foreground">
+                    <Label
+                      htmlFor="phone"
+                      className="text-sm font-medium text-foreground"
+                    >
                       {locale === "ar" ? "رقم الهاتف" : "Phone Number"} *
                     </Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) => handleInputChange("phone", e.target.value)}
-                      placeholder={locale === "ar" ? "أدخل رقم هاتفكم" : "Enter your phone number"}
+                      onChange={(e) =>
+                        handleInputChange("phone", e.target.value)
+                      }
+                      placeholder={
+                        locale === "ar"
+                          ? "أدخل رقم هاتفكم"
+                          : "Enter your phone number"
+                      }
                       className="h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 text-start rtl:text-right"
                       dir={locale === "ar" ? "rtl" : "ltr"}
                       required
@@ -209,20 +273,28 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <div className="flex items-center gap-2 mb-3">
                     <Clock className="h-4 w-4 text-accent" />
                     <h3 className="text-lg font-medium text-foreground">
-                      {locale === "ar" ? "موعد الاستشارة" : "Appointment Schedule"}
+                      {locale === "ar"
+                        ? "موعد الاستشارة"
+                        : "Appointment Schedule"}
                     </h3>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
-                      <Label htmlFor="preferredDate" className="text-sm font-medium text-foreground">
-                        {locale === "ar" ? "التاريخ المفضل" : "Preferred Date"} *
+                      <Label
+                        htmlFor="preferredDate"
+                        className="text-sm font-medium text-foreground"
+                      >
+                        {locale === "ar" ? "التاريخ المفضل" : "Preferred Date"}{" "}
+                        *
                       </Label>
                       <Input
                         id="preferredDate"
                         type="date"
                         value={formData.preferredDate}
-                        onChange={(e) => handleInputChange("preferredDate", e.target.value)}
+                        onChange={(e) =>
+                          handleInputChange("preferredDate", e.target.value)
+                        }
                         className="h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200"
                         required
                       />
@@ -234,10 +306,20 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       </Label>
                       <Select
                         value={formData.preferredTime}
-                        onValueChange={(value) => handleInputChange("preferredTime", value)}
+                        onValueChange={(value) =>
+                          handleInputChange("preferredTime", value)
+                        }
                       >
-                        <SelectTrigger className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}>
-                          <SelectValue placeholder={locale === "ar" ? "اختر الوقت المفضل" : "Select preferred time"} />
+                        <SelectTrigger
+                          className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}
+                        >
+                          <SelectValue
+                            placeholder={
+                              locale === "ar"
+                                ? "اختر الوقت المفضل"
+                                : "Select preferred time"
+                            }
+                          />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="9:00">9:00 AM</SelectItem>
@@ -265,7 +347,9 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <div className="flex items-center gap-2 mb-3">
                     <FileText className="h-4 w-4 text-accent" />
                     <h3 className="text-lg font-medium text-foreground">
-                      {locale === "ar" ? "تفضيلات الخدمة" : "Service Preferences"}
+                      {locale === "ar"
+                        ? "تفضيلات الخدمة"
+                        : "Service Preferences"}
                     </h3>
                   </div>
 
@@ -276,26 +360,42 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       </Label>
                       <Select
                         value={formData.serviceType}
-                        onValueChange={(value) => handleInputChange("serviceType", value)}
+                        onValueChange={(value) =>
+                          handleInputChange("serviceType", value)
+                        }
                       >
-                        <SelectTrigger className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}>
-                          <SelectValue placeholder={locale === "ar" ? "اختر نوع الخدمة" : "Select service type"} />
+                        <SelectTrigger
+                          className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}
+                        >
+                          <SelectValue
+                            placeholder={
+                              locale === "ar"
+                                ? "اختر نوع الخدمة"
+                                : "Select service type"
+                            }
+                          />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="corporate">
-                            {locale === "ar" ? "القانون التجاري" : "Corporate Law"}
+                            {locale === "ar"
+                              ? "القانون التجاري"
+                              : "Corporate Law"}
                           </SelectItem>
                           <SelectItem value="civil">
                             {locale === "ar" ? "القانون المدني" : "Civil Law"}
                           </SelectItem>
                           <SelectItem value="criminal">
-                            {locale === "ar" ? "القانون الجنائي" : "Criminal Law"}
+                            {locale === "ar"
+                              ? "القانون الجنائي"
+                              : "Criminal Law"}
                           </SelectItem>
                           <SelectItem value="family">
                             {locale === "ar" ? "قانون الأسرة" : "Family Law"}
                           </SelectItem>
                           <SelectItem value="real-estate">
-                            {locale === "ar" ? "القانون العقاري" : "Real Estate Law"}
+                            {locale === "ar"
+                              ? "القانون العقاري"
+                              : "Real Estate Law"}
                           </SelectItem>
                           <SelectItem value="other">
                             {locale === "ar" ? "أخرى" : "Other"}
@@ -306,14 +406,26 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
                     <div className="flex flex-col gap-2">
                       <Label className="text-sm font-medium text-foreground">
-                        {locale === "ar" ? "نوع الاستشارة" : "Consultation Type"}
+                        {locale === "ar"
+                          ? "نوع الاستشارة"
+                          : "Consultation Type"}
                       </Label>
                       <Select
                         value={formData.consultationType}
-                        onValueChange={(value) => handleInputChange("consultationType", value)}
+                        onValueChange={(value) =>
+                          handleInputChange("consultationType", value)
+                        }
                       >
-                        <SelectTrigger className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}>
-                          <SelectValue placeholder={locale === "ar" ? "اختر نوع الاستشارة" : "Select consultation type"} />
+                        <SelectTrigger
+                          className={`h-10 border-border/50 focus:border-accent/50 focus:ring-accent/20 transition-all duration-200 ${locale === "ar" ? "flex-row-reverse" : ""}`}
+                        >
+                          <SelectValue
+                            placeholder={
+                              locale === "ar"
+                                ? "اختر نوع الاستشارة"
+                                : "Select consultation type"
+                            }
+                          />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="office">
@@ -345,18 +457,27 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                   <div className="flex items-center gap-2 mb-3">
                     <MessageCircle className="h-4 w-4 text-accent" />
                     <h3 className="text-lg font-medium text-foreground">
-                      {locale === "ar" ? "معلومات إضافية" : "Additional Information"}
+                      {locale === "ar"
+                        ? "معلومات إضافية"
+                        : "Additional Information"}
                     </h3>
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <Label htmlFor="message" className="text-sm font-medium text-foreground">
-                      {locale === "ar" ? "رسالة أو ملاحظات" : "Message or Notes"}
+                    <Label
+                      htmlFor="message"
+                      className="text-sm font-medium text-foreground"
+                    >
+                      {locale === "ar"
+                        ? "رسالة أو ملاحظات"
+                        : "Message or Notes"}
                     </Label>
                     <Textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
+                      onChange={(e) =>
+                        handleInputChange("message", e.target.value)
+                      }
                       placeholder={
                         locale === "ar"
                           ? "يرجى إضافة أي ملاحظات أو معلومات إضافية..."
@@ -372,19 +493,24 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                     <Checkbox
                       id="agreedToTerms"
                       checked={formData.agreedToTerms}
-                      onCheckedChange={(checked) => handleInputChange("agreedToTerms", checked as boolean)}
+                      onCheckedChange={(checked) =>
+                        handleInputChange("agreedToTerms", checked as boolean)
+                      }
                       className="mt-1 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
                       required
                     />
                     <div className="space-y-1">
-                      <Label htmlFor="agreedToTerms" className="text-sm font-medium text-foreground cursor-pointer">
+                      <Label
+                        htmlFor="agreedToTerms"
+                        className="text-sm font-medium text-foreground cursor-pointer"
+                      >
                         {locale === "ar"
                           ? "أوافق على شروط الخدمة وسياسة الخصوصية"
                           : "I agree to the terms of service and privacy policy"}{" "}
                         *
                       </Label>
                       <p className="text-xs text-muted-foreground">
-                        {locale === "ar" 
+                        {locale === "ar"
                           ? "بياناتكم محمية ومضمونة السرية"
                           : "Your data is protected and confidential"}
                       </p>
@@ -406,12 +532,13 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       className="flex-1 h-10 bg-accent text-white hover:bg-accent/90 transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {locale === "ar" ? "التالي" : "Next Step"}
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="ml-2 h-4 w-4 hidden ltr:block" />
+                      <ArrowLeft className="mr-2 h-4 w-4 hidden rtl:block" />
                     </Button>
-                    <Button 
-                      type="button" 
-                      variant="outline" 
-                      onClick={onClose} 
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={onClose}
                       className="h-10 px-6 border-border/50 hover:border-accent/50 hover:bg-accent hover:text-white transition-all duration-200"
                     >
                       {locale === "ar" ? "إلغاء" : "Cancel"}
@@ -425,11 +552,13 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                       className="flex-1 h-10 bg-accent text-white hover:bg-accent/90 transition-all duration-200 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <Calendar className="mr-2 h-4 w-4" />
-                      {locale === "ar" ? "تأكيد حجز الموعد" : "Confirm Appointment"}
+                      {locale === "ar"
+                        ? "تأكيد حجز الموعد"
+                        : "Confirm Appointment"}
                     </Button>
-                    <Button 
-                      type="button" 
-                      variant="outline" 
+                    <Button
+                      type="button"
+                      variant="outline"
                       onClick={handlePrevStep}
                       className="h-10 px-6 border-border/50 hover:border-accent/50 hover:bg-accent hover:text-white transition-all duration-200"
                     >
@@ -444,5 +573,5 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
