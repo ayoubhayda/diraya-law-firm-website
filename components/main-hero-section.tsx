@@ -35,12 +35,12 @@ export function MainHeroSection() {
 
   const statsData = [
     {
-      value: "15+",
+      value: "10+",
       labelAr: "سنوات خبرة",
       labelEn: "Years Experience",
     },
     {
-      value: "500+",
+      value: "120+",
       labelAr: "عميل راضي",
       labelEn: "Happy Clients",
     },

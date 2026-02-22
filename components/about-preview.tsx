@@ -29,12 +29,12 @@ export function AboutPreview() {
     {
       icon: Users,
       title: locale === "ar" ? "عملاء راضون" : "Satisfied Clients",
-      description: locale === "ar" ? "+500 عميل" : "500+ clients",
+      description: locale === "ar" ? "+120 عميل" : "120+ clients",
     },
     {
       icon: Clock,
       title: locale === "ar" ? "خبرة واسعة" : "Extensive Experience",
-      description: locale === "ar" ? "15+ سنة" : "15+ years",
+      description: locale === "ar" ? "10+ سنة" : "10+ years",
     },
   ];
 
@@ -156,7 +156,7 @@ export function AboutPreview() {
                 transition={{ delay: 0.5, duration: 0.4 }}
               >
                 <div className="flex items-center gap-2 bg-background/95 backdrop-blur-sm border border-accent/20 rounded-full px-5 py-2.5">
-                  <span className="text-accent font-bold text-lg">15+</span>
+                  <span className="text-accent font-bold text-lg">10+</span>
                   <span className="text-muted-foreground text-sm font-medium">
                     {locale === "ar" ? "سنوات خبرة" : "Years Experience"}
                   </span>
@@ -181,8 +181,8 @@ export function AboutPreview() {
               variants={itemVariants}
             >
               {locale === "ar"
-                ? "خبرة 15+ عاماً في تقديم خدمات قانونية متميزة بنزاهة ومهنية عالية"
-                : "15+ years of delivering exceptional legal services with integrity and professionalism"}
+                ? "خبرة 10+ سنوات في تقديم خدمات قانونية متميزة بنزاهة ومهنية عالية"
+                : "10+ years of delivering exceptional legal services with integrity and professionalism"}
             </motion.p>
 
             {/* Achievements - Mobile: Minimal horizontal pills */}
@@ -303,8 +303,8 @@ export function AboutPreview() {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
               >
                 {locale === "ar"
-                  ? "بخبرة تزيد عن 15 عاماً في الممارسة القانونية، نقدم خدمات قانونية متميزة تتسم بالنزاهة والمهنية العالية. نحن ملتزمون بحماية حقوق عملائنا وتحقيق أفضل النتائج في جميع القضايا."
-                  : "With over 15 years of legal practice experience, we provide exceptional legal services characterized by integrity and high professionalism. We are committed to protecting our clients' rights and achieving the best results in all cases."}
+                  ? "بخبرة تزيد عن 10 سنوات في الممارسة القانونية، نقدم خدمات قانونية متميزة تتسم بالنزاهة والمهنية العالية. نحن ملتزمون بحماية حقوق عملائنا وتحقيق أفضل النتائج في جميع القضايا."
+                  : "With over 10 years of legal practice experience, we provide exceptional legal services characterized by integrity and high professionalism. We are committed to protecting our clients' rights and achieving the best results in all cases."}
               </motion.p>
             </motion.div>
 
@@ -475,7 +475,7 @@ export function AboutPreview() {
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
                     <div className="relative z-10">
                       <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-accent mb-2 group-hover/card:scale-110 transition-transform duration-300">
-                        15+
+                        10+
                       </div>
                       <div className="text-muted-foreground font-medium text-xs sm:text-sm">
                         {locale === "ar" ? "سنوات خبرة" : "Years Experience"}

@@ -61,7 +61,7 @@ export default function AboutPage() {
 
   const milestones = [
     {
-      year: "2010",
+      year: "2013",
       title: locale === "ar" ? "التخرج من كلية الحقوق" : "Law Degree",
       description:
         locale === "ar"
@@ -70,7 +70,7 @@ export default function AboutPage() {
       icon: GraduationCap,
     },
     {
-      year: "2013",
+      year: "2016",
       title: locale === "ar" ? "التسجيل في هيئة المحامين" : "Bar Admission",
       description:
         locale === "ar"
@@ -79,7 +79,7 @@ export default function AboutPage() {
       icon: Scale,
     },
     {
-      year: "2017",
+      year: "2016",
       title: locale === "ar" ? "تأسيس المكتب" : "Founded the Firm",
       description:
         locale === "ar"
@@ -88,12 +88,12 @@ export default function AboutPage() {
       icon: Scale,
     },
     {
-      year: "2025",
-      title: locale === "ar" ? "أكثر من 500 موكل" : "500+ Clients Served",
+      year: "2026",
+      title: locale === "ar" ? "أكثر من 120 موكل" : "120+ Clients Served",
       description:
         locale === "ar"
-          ? "خدمة أكثر من 500 موكل في مختلف القضايا القانونية"
-          : "Served over 500 clients across various legal matters",
+          ? "خدمة أكثر من 120 موكل في مختلف القضايا القانونية"
+          : "Served over 120 clients across various legal matters",
       icon: Users,
     },
   ];
@@ -135,10 +135,10 @@ export default function AboutPage() {
 
   const achievements = [
     {
-      number: "15+",
+      number: "10+",
       label: locale === "ar" ? "سنوات خبرة" : "Years Experience",
     },
-    { number: "500+", label: locale === "ar" ? "عميل راضي" : "Happy Clients" },
+    { number: "120+", label: locale === "ar" ? "عميل راضي" : "Happy Clients" },
     { number: "95%", label: locale === "ar" ? "معدل النجاح" : "Success Rate" },
     {
       number: "10+",
@@ -307,8 +307,8 @@ export default function AboutPage() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
                     {locale === "ar"
-                      ? "بخبرة تزيد عن 15 عاماً في الممارسة القانونية، أقدم خدمات قانونية شاملة ومتخصصة في مختلف المجالات القانونية. حصلت على درجة الإجازة في الحقوق من جامعة محمد الخامس بالرباط بامتياز، وأكملت دراساتي العليا في القانون التجاري الدولي."
-                      : "With over 15 years of legal practice experience, I provide comprehensive and specialized legal services across various legal fields. I earned my Law degree from Mohammed V University of Rabat with honors, and completed my graduate studies in International Commercial Law."}
+                      ? "بخبرة تزيد عن 10 سنوات في الممارسة القانونية، أقدم خدمات قانونية شاملة ومتخصصة في مختلف المجالات القانونية. حصلت على درجة الإجازة في الحقوق من جامعة محمد الخامس بالرباط بامتياز، وأكملت دراساتي العليا في القانون التجاري الدولي."
+                      : "With over 10 years of legal practice experience, I provide comprehensive and specialized legal services across various legal fields. I earned my Law degree from Mohammed V University of Rabat with honors, and completed my graduate studies in International Commercial Law."}
                   </motion.p>
                   <motion.p
                     className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-8 hidden md:block"

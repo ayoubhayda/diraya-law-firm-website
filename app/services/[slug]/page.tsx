@@ -204,14 +204,13 @@ export default function ServicePage({ params }: ServicePageProps) {
                   {[
                     {
                       icon: Award,
-                      value: "15+",
+                      value: "10+",
                       label: locale === "ar" ? "سنة خبرة" : "Years Experience",
                     },
                     {
                       icon: Target,
-                      value: "500+",
-                      label:
-                        locale === "ar" ? "قضية ناجحة" : "Successful Cases",
+                      value: "120+",
+                      label: locale === "ar" ? "عميل راضي" : "Happy Clients",
                     },
                     {
                       icon: Clock,
