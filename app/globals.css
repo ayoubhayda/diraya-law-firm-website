@@ -59,50 +59,50 @@
 }
 
 .dark {
-  /* Updated dark mode colors for premium lawyer website */
-  --background: oklch(0.08 0.01 258.34); /* Dark navy background */
-  --foreground: oklch(1 0 0); /* Light gray text */
-  --card: oklch(0.12 0.01 258.34); /* Darker navy card */
-  --card-foreground: oklch(1 0 0); /* Light gray card text */
-  --popover: oklch(0.12 0.01 258.34); /* Darker navy popover */
-  --popover-foreground: oklch(1 0 0); /* Light gray popover text */
-  --primary: oklch(1 0 0); /* Light gray primary in dark mode */
-  --primary-foreground: oklch(0.145 0.02 258.34); /* Navy blue text on primary */
+  /* Improved dark mode — softer navy tones, comfortable for eyes */
+  --background: oklch(0.16 0.015 258.34); /* Soft dark navy background */
+  --foreground: oklch(0.93 0 0); /* Slightly off-white text (less harsh) */
+  --card: oklch(0.19 0.015 258.34); /* Elevated card surface */
+  --card-foreground: oklch(0.93 0 0); /* Off-white card text */
+  --popover: oklch(0.19 0.015 258.34); /* Elevated popover surface */
+  --popover-foreground: oklch(0.93 0 0); /* Off-white popover text */
+  --primary: oklch(0.93 0 0); /* Off-white primary in dark mode */
+  --primary-foreground: oklch(0.16 0.015 258.34); /* Navy text on primary */
   --secondary: oklch(0.75 0.15 85.87); /* Gold secondary remains */
-  --secondary-foreground: oklch(0.08 0.01 258.34); /* Dark navy text on secondary */
-  --muted: oklch(0.2 0.01 258.34); /* Muted dark navy */
-  --muted-foreground: oklch(0.7 0 0); /* Muted light gray text */
+  --secondary-foreground: oklch(0.16 0.015 258.34); /* Navy text on secondary */
+  --muted: oklch(0.24 0.015 258.34); /* Muted navy */
+  --muted-foreground: oklch(0.65 0 0); /* Muted light gray text */
   --accent: oklch(0.75 0.15 85.87); /* Gold accent remains */
-  --accent-foreground: oklch(0.08 0.01 258.34); /* Dark navy text on accent */
+  --accent-foreground: oklch(0.16 0.015 258.34); /* Navy text on accent */
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(27.4% 0.006 286.033); /* Dark navy border */
-  --input: oklch(0.2 0.01 258.34); /* Dark navy input */
+  --destructive-foreground: oklch(0.93 0 0);
+  --border: oklch(0.28 0.012 258.34); /* Visible navy border */
+  --input: oklch(0.22 0.015 258.34); /* Navy input background */
   --ring: oklch(0.75 0.15 85.87 / 0.5); /* Gold focus ring */
   --chart-1: oklch(0.75 0.15 85.87); /* Gold chart in dark mode */
-  --chart-2: oklch(1 0 0); /* Light gray chart */
-  --chart-3: oklch(0.2 0.01 258.34); /* Dark navy chart */
+  --chart-2: oklch(0.93 0 0); /* Light chart */
+  --chart-3: oklch(0.24 0.015 258.34); /* Navy chart */
   --chart-4: oklch(0.75 0.15 85.87); /* Gold chart */
-  --chart-5: oklch(1 0 0); /* Light gray chart */
-  --sidebar: oklch(0.08 0.01 258.34); /* Dark navy sidebar */
-  --sidebar-foreground: oklch(1 0 0); /* Light gray sidebar text */
+  --chart-5: oklch(0.93 0 0); /* Light chart */
+  --sidebar: oklch(0.14 0.015 258.34); /* Slightly darker sidebar */
+  --sidebar-foreground: oklch(0.93 0 0); /* Off-white sidebar text */
   --sidebar-primary: oklch(0.75 0.15 85.87); /* Gold sidebar primary */
-  --sidebar-primary-foreground: oklch(0.08 0.01 258.34); /* Dark navy text on sidebar primary */
+  --sidebar-primary-foreground: oklch(0.16 0.015 258.34); /* Navy text on sidebar primary */
   --sidebar-accent: oklch(0.75 0.15 85.87); /* Gold sidebar accent */
-  --sidebar-accent-foreground: oklch(0.08 0.01 258.34); /* Dark navy text on sidebar accent */
-  --sidebar-border: oklch(0.2 0.01 258.34); /* Dark navy sidebar border */
+  --sidebar-accent-foreground: oklch(0.16 0.015 258.34); /* Navy text on sidebar accent */
+  --sidebar-border: oklch(0.26 0.012 258.34); /* Navy sidebar border */
   --sidebar-ring: oklch(0.75 0.15 85.87 / 0.5); /* Gold sidebar focus ring */
 
   /* Surface colors — dark mode */
-  --surface: oklch(0.15 0.01 258.34); /* Dark surface */
+  --surface: oklch(0.21 0.015 258.34); /* Elevated dark surface */
   --surface-foreground: oklch(0.9 0 0); /* Light text on surface */
   --surface-muted: oklch(0.55 0 0); /* Muted text on surface */
-  --surface-border: oklch(0.25 0.01 258.34); /* Dark surface border */
+  --surface-border: oklch(0.30 0.012 258.34); /* Surface border */
 
   /* Semantic status colors — dark mode */
   --success: oklch(0.55 0.17 145);
-  --success-light: oklch(0.2 0.04 145);
-  --success-border: oklch(0.3 0.06 145);
+  --success-light: oklch(0.22 0.04 145);
+  --success-border: oklch(0.32 0.06 145);
   --warning: oklch(0.75 0.18 85);
   --danger-warning: oklch(0.65 0.2 50);
   --danger: oklch(0.577 0.245 27.325);

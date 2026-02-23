@@ -109,7 +109,7 @@ export default function ServicePage({ params }: ServicePageProps) {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="py-10 md:py-20 bg-zinc-100 dark:bg-zinc-950 text-foreground">
+        <section className="py-10 md:py-20 bg-zinc-100 dark:bg-background text-foreground">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 items-center">
               <motion.div
