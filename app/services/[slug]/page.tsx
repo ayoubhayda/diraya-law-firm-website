@@ -225,7 +225,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
-                      className="text-center p-3 md:p-6 bg-zinc-200/60 dark:bg-zinc-700/60 rounded-lg"
+                      className="text-center p-3 md:p-6 bg-accent/5 border border-accent/10 rounded-lg"
                       variants={scaleIn}
                       whileHover={{ scale: 1.05, y: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}

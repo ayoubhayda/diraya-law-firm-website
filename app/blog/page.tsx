@@ -193,7 +193,7 @@ export default function BlogPage() {
                       }
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-11 rtl:pl-4 rtl:pr-11 h-12 md:h-[52px] text-sm md:text-base bg-surface dark:bg-surface border-border/80 dark:border-border/50 rounded-xl focus:border-accent/50 focus:ring-2 focus:ring-accent/10 placeholder:text-muted-foreground transition-all duration-300"
+                      className="w-full pl-11 rtl:pl-4 rtl:pr-11 h-12 md:h-[52px] text-sm md:text-base border-border/80 dark:border-border/50 rounded-xl focus:border-accent/50 focus:ring-2 focus:ring-accent/10 placeholder:text-muted-foreground transition-all duration-300"
                     />
                   </div>
 
@@ -218,7 +218,7 @@ export default function BlogPage() {
                           ${
                             selectedCategory === category.id
                               ? "bg-accent text-white shadow-[0_2px_12px_-2px_rgba(var(--accent-rgb,180,130,64),0.4)]"
-                              : "bg-surface dark:bg-surface text-surface-foreground hover:bg-muted dark:hover:bg-muted hover:text-foreground border border-border/60 dark:border-border/40 hover:border-border dark:hover:border-border"
+                              : "text-surface-foreground hover:bg-accent/10 dark:hover:bg-accent/10 hover:text-foreground border border-border/60 dark:border-border/40 hover:border-accent dark:hover:border-accent"
                           }
                         `}
                       >
@@ -435,7 +435,7 @@ export default function BlogPage() {
                 placeholder={
                   locale === "ar" ? "بريدك الإلكتروني" : "Your email address"
                 }
-                className="bg-foreground/5 border-border text-foreground placeholder:text-foreground/50 focus:border-accent/50 focus:ring-accent/20 h-12"
+                className="border-border text-foreground placeholder:text-foreground/50 focus:border-accent/50 focus:ring-accent/20 h-12"
                 required
               />
               <Button

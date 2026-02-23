@@ -309,7 +309,7 @@ export function ServiceConsultationModal({
                             }
                           />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent dir={locale === "ar" ? "rtl" : "ltr"}>
                           <SelectItem value="phone">
                             <div className="flex items-center gap-2">
                               <Phone className="h-4 w-4 text-accent" />
@@ -361,7 +361,7 @@ export function ServiceConsultationModal({
                             }
                           />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent dir={locale === "ar" ? "rtl" : "ltr"}>
                           <SelectItem value="low">
                             <div className="flex items-center gap-2">
                               <div className="h-2 w-2 rounded-full bg-success" />
