@@ -27,7 +27,7 @@ import {
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
 import { useConsultationModal } from "@/hooks/use-consultation-modal";
-import { FreeConsultationModelButton } from "@/components/free-consultation-model-button";
+import { ConsultationButton } from "@/components/consultation-button";
 import { ConsultationModal } from "@/components/consultation-modal";
 import { motion } from "framer-motion";
 import { SectionSeparator } from "@/components/section-separator";
@@ -532,11 +532,11 @@ export default function ServicesPage() {
             </h2>
             <p className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
               {locale === "ar"
-                ? "تواصل معنا اليوم للحصول على استشارة قانونية مجانية ومناقشة احتياجاتكم"
-                : "Contact us today for a free legal consultation and discuss your needs"}
+                ? "تواصل معنا اليوم للحصول على استشارة قانونية ومناقشة احتياجاتكم"
+                : "Contact us today for a legal consultation and discuss your needs"}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
-              <FreeConsultationModelButton onClick={openModal} />
+              <ConsultationButton onClick={openModal} />
               <ConsultationModal isOpen={isOpen} onClose={closeModal} />
               <Button
                 size="lg"

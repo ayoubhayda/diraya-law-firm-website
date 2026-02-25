@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -287,10 +287,9 @@ export function HeroSection() {
           </motion.div>
         </div>
       </motion.div>
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
     </section>
   );

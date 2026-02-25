@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, ArrowRight, ArrowLeft } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { useConsultationModal } from "@/hooks/use-consultation-modal";
-import { FreeConsultationModelButton } from "./free-consultation-model-button";
+import { ConsultationButton } from "./consultation-button";
 import { ConsultationModal } from "./consultation-modal";
 import { motion } from "framer-motion";
 
@@ -66,7 +66,7 @@ export function CTASection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <FreeConsultationModelButton onClick={openModal} />
+            <ConsultationButton onClick={openModal} />
             <ConsultationModal isOpen={isOpen} onClose={closeModal} />
             <Button
               size="lg"

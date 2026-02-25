@@ -1,33 +1,33 @@
 export interface Service {
-  slug: string
-  icon: string
+  slug: string;
+  icon: string;
   title: {
-    ar: string
-    en: string
-  }
+    ar: string;
+    en: string;
+  };
   description: {
-    ar: string
-    en: string
-  }
+    ar: string;
+    en: string;
+  };
   features: {
-    ar: string[]
-    en: string[]
-  }
+    ar: string[];
+    en: string[];
+  };
   detailedContent: {
     ar: {
-      overview: string
-      approach: string
-      benefits: string[]
-      process: string[]
-    }
+      overview: string;
+      approach: string;
+      benefits: string[];
+      process: string[];
+    };
     en: {
-      overview: string
-      approach: string
-      benefits: string[]
-      process: string[]
-    }
-  }
-  relatedServices: string[]
+      overview: string;
+      approach: string;
+      benefits: string[];
+      process: string[];
+    };
+  };
+  relatedServices: string[];
 }
 
 export const services: Service[] = [
@@ -43,8 +43,18 @@ export const services: Service[] = [
       en: "We provide comprehensive consultation on all family matters including marriage, divorce, child custody, alimony, and property division. We understand the sensitivity of these cases and work with understanding and high professionalism.",
     },
     features: {
-      ar: ["قضايا الطلاق والخلع", "حضانة الأطفال", "النفقة والمؤخر", "تقسيم الممتلكات"],
-      en: ["Divorce and Khula Cases", "Child Custody", "Alimony and Deferred Dower", "Property Division"],
+      ar: [
+        "قضايا الطلاق والخلع",
+        "حضانة الأطفال",
+        "النفقة والمؤخر",
+        "تقسيم الممتلكات",
+      ],
+      en: [
+        "Divorce and Khula Cases",
+        "Child Custody",
+        "Alimony and Deferred Dower",
+        "Property Division",
+      ],
     },
     detailedContent: {
       ar: {
@@ -57,11 +67,11 @@ export const services: Service[] = [
           "نهج حساس ومتفهم للقضايا الشخصية",
           "سعي للحلول الودية قبل اللجوء للمحاكم",
           "حماية مصالح الأطفال كأولوية قصوى",
-          "استشارات مجانية للتقييم الأولي",
+          "استشارات للتقييم الأولي",
           "متابعة مستمرة حتى انتهاء القضية",
         ],
         process: [
-          "استشارة أولية مجانية لفهم الوضع",
+          "استشارة أولية لفهم الوضع",
           "تحليل شامل للحالة القانونية والشخصية",
           "وضع استراتيجية قانونية مخصصة",
           "محاولة الوصول لحلول ودية",
@@ -79,11 +89,11 @@ export const services: Service[] = [
           "Sensitive and understanding approach to personal issues",
           "Pursuit of amicable solutions before resorting to courts",
           "Protection of children's interests as top priority",
-          "Free consultations for initial assessment",
+          "Consultations for initial assessment",
           "Continuous follow-up until case completion",
         ],
         process: [
-          "Free initial consultation to understand the situation",
+          "Initial consultation to understand the situation",
           "Comprehensive analysis of legal and personal status",
           "Development of customized legal strategy",
           "Attempt to reach amicable solutions",
@@ -106,8 +116,18 @@ export const services: Service[] = [
       en: "Complete legal services in real estate transactions including buying, selling, leasing, and real estate investment. We help you protect your real estate investments and ensure transaction safety.",
     },
     features: {
-      ar: ["عقود البيع والشراء", "عقود الإيجار", "النزاعات العقارية", "الاستثمار العقاري"],
-      en: ["Sale and Purchase Contracts", "Lease Agreements", "Real Estate Disputes", "Real Estate Investment"],
+      ar: [
+        "عقود البيع والشراء",
+        "عقود الإيجار",
+        "النزاعات العقارية",
+        "الاستثمار العقاري",
+      ],
+      en: [
+        "Sale and Purchase Contracts",
+        "Lease Agreements",
+        "Real Estate Disputes",
+        "Real Estate Investment",
+      ],
     },
     detailedContent: {
       ar: {
@@ -169,8 +189,18 @@ export const services: Service[] = [
       en: "Comprehensive legal consultation for companies and commercial institutions including company formation, commercial contracts, commercial dispute resolution, and legal compliance.",
     },
     features: {
-      ar: ["تأسيس الشركات", "العقود التجارية", "النزاعات التجارية", "الامتثال القانوني"],
-      en: ["Company Formation", "Commercial Contracts", "Commercial Disputes", "Legal Compliance"],
+      ar: [
+        "تأسيس الشركات",
+        "العقود التجارية",
+        "النزاعات التجارية",
+        "الامتثال القانوني",
+      ],
+      en: [
+        "Company Formation",
+        "Commercial Contracts",
+        "Commercial Disputes",
+        "Legal Compliance",
+      ],
     },
     detailedContent: {
       ar: {
@@ -232,8 +262,18 @@ export const services: Service[] = [
       en: "Strong and professional legal representation in criminal cases with focus on protecting defendants' rights and ensuring justice. We provide strong and well-studied defense in all types of criminal cases.",
     },
     features: {
-      ar: ["الجرائم المالية", "جرائم المرور", "القضايا الجنائية العامة", "الاستئناف الجنائي"],
-      en: ["Financial Crimes", "Traffic Violations", "General Criminal Cases", "Criminal Appeals"],
+      ar: [
+        "الجرائم المالية",
+        "جرائم المرور",
+        "القضايا الجنائية العامة",
+        "الاستئناف الجنائي",
+      ],
+      en: [
+        "Financial Crimes",
+        "Traffic Violations",
+        "General Criminal Cases",
+        "Criminal Appeals",
+      ],
     },
     detailedContent: {
       ar: {
@@ -296,7 +336,12 @@ export const services: Service[] = [
     },
     features: {
       ar: ["العقود التجارية", "عقود العمل", "اتفاقيات الشراكة", "عقود الخدمات"],
-      en: ["Commercial Contracts", "Employment Contracts", "Partnership Agreements", "Service Contracts"],
+      en: [
+        "Commercial Contracts",
+        "Employment Contracts",
+        "Partnership Agreements",
+        "Service Contracts",
+      ],
     },
     detailedContent: {
       ar: {
@@ -358,8 +403,18 @@ export const services: Service[] = [
       en: "Distinguished legal representation before courts and arbitration bodies with extensive experience in managing complex cases and achieving the best results for clients.",
     },
     features: {
-      ar: ["التقاضي المدني", "التحكيم التجاري", "تنفيذ الأحكام", "الطعون والاستئناف"],
-      en: ["Civil Litigation", "Commercial Arbitration", "Judgment Execution", "Appeals and Challenges"],
+      ar: [
+        "التقاضي المدني",
+        "التحكيم التجاري",
+        "تنفيذ الأحكام",
+        "الطعون والاستئناف",
+      ],
+      en: [
+        "Civil Litigation",
+        "Commercial Arbitration",
+        "Judgment Execution",
+        "Appeals and Challenges",
+      ],
     },
     detailedContent: {
       ar: {
@@ -409,12 +464,18 @@ export const services: Service[] = [
     },
     relatedServices: ["criminal-defense", "business-law"],
   },
-]
+];
 
 export function getServiceBySlug(slug: string): Service | undefined {
-  return services.find((service) => service.slug === slug)
+  return services.find((service) => service.slug === slug);
 }
 
-export function getRelatedServices(currentSlug: string, relatedSlugs: string[]): Service[] {
-  return services.filter((service) => relatedSlugs.includes(service.slug) && service.slug !== currentSlug)
+export function getRelatedServices(
+  currentSlug: string,
+  relatedSlugs: string[],
+): Service[] {
+  return services.filter(
+    (service) =>
+      relatedSlugs.includes(service.slug) && service.slug !== currentSlug,
+  );
 }

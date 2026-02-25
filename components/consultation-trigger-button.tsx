@@ -14,8 +14,8 @@ export function ConsultationTriggerButton({
   const { locale } = useLocale();
 
   const text = {
-    en: "Free Consultation",
-    ar: "استشارة مجانية",
+    en: "Book Consultation",
+    ar: "احجز استشارة",
   };
 
   return (

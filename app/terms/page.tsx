@@ -135,7 +135,6 @@ export default function TermsPage() {
           ? [
               "شروط الأتعاب والدفع:",
               "• يتم تحديد الأتعاب بناءً على طبيعة وتعقيد القضية",
-              "• الاستشارة الأولية مجانية لمدة 30 دقيقة",
               "• يتم الاتفاق على الأتعاب كتابياً قبل بدء العمل",
               "• الدفع مطلوب مقدماً أو وفقاً لجدول الدفع المتفق عليه",
               "• الأتعاب لا تشمل الرسوم الحكومية أو رسوم المحاكم",
@@ -144,7 +143,6 @@ export default function TermsPage() {
           : [
               "Fee and payment terms:",
               "• Fees are determined based on the nature and complexity of the case",
-              "• Initial consultation is free for 30 minutes",
               "• Fees are agreed upon in writing before starting work",
               "• Payment is required in advance or according to the agreed payment schedule",
               "• Fees do not include government fees or court costs",

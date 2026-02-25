@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getServiceBySlug, getRelatedServices } from "@/lib/services";
-import { ServiceConsultationModal } from "@/components/service-consultation-modal";
+import { ConsultationModal } from "@/components/consultation-modal";
 import { useState, use } from "react";
 import { motion } from "framer-motion";
 import { SectionSeparator } from "@/components/section-separator";
@@ -396,8 +396,8 @@ export default function ServicePage({ params }: ServicePageProps) {
                           onClick={() => setIsConsultationOpen(true)}
                         >
                           {locale === "ar"
-                            ? "احجز استشارة مجانية"
-                            : "Book Free Consultation"}
+                            ? "احجز استشارة"
+                            : "Book Consultation"}
                         </Button>
                       </motion.div>
                       <motion.div
@@ -733,8 +733,8 @@ export default function ServicePage({ params }: ServicePageProps) {
             </h2>
             <p className="text-sm md:text-lg text-foreground/60 mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto">
               {locale === "ar"
-                ? "تواصل معنا اليوم للحصول على استشارة قانونية مجانية ومناقشة احتياجاتكم"
-                : "Contact us today for a free legal consultation and discuss your needs"}
+                ? "تواصل معنا اليوم للحصول على استشارة قانونية ومناقشة احتياجاتكم"
+                : "Contact us today for a legal consultation and discuss your needs"}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
               <Button
@@ -742,9 +742,7 @@ export default function ServicePage({ params }: ServicePageProps) {
                 className="bg-accent text-white hover:bg-accent/90 cursor-pointer"
                 onClick={() => setIsConsultationOpen(true)}
               >
-                {locale === "ar"
-                  ? "احجز استشارة مجانية"
-                  : "Book Free Consultation"}
+                {locale === "ar" ? "احجز استشارة" : "Book Consultation"}
                 <ArrowIcon className="ms-2 h-5 w-5" />
               </Button>
               <Button
@@ -762,10 +760,9 @@ export default function ServicePage({ params }: ServicePageProps) {
       <Footer />
       <WhatsAppButton />
 
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={service.title[locale]}
       />
     </div>
   );

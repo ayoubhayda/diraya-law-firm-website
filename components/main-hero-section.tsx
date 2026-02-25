@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, MessageCircle, Scale } from "lucide-react";
 import { useLocale } from "@/hooks/use-locale-context";
 import { getTranslation } from "@/lib/i18n";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -191,10 +191,9 @@ export function MainHeroSection() {
       {/* Bottom gradient transition into dark PracticeAreasBar */}
       <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-b from-transparent to-neutral-900/5 pointer-events-none" />
 
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
     </section>
   );

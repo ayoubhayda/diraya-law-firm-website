@@ -1,10 +1,10 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/hooks/use-locale-context";
 import { useState } from "react";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 
 export default function ServiceConsultationModelButton() {
   const { locale } = useLocale();
@@ -17,13 +17,12 @@ export default function ServiceConsultationModelButton() {
         size="lg"
         className="bg-accent text-white hover:bg-accent/90 cursor-pointer"
       >
-        {locale === "ar" ? "احصل على استشارة" : "Get Consultation"}
-        <MessageCircle className="ml-2 h-5 w-5" />
+        {locale === "ar" ? "احجز استشارة" : "Book Consultation"}
+        <Calendar className="ml-2 h-5 w-5" />
       </Button>
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
     </>
   );

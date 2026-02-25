@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 import darkLogo from "@/assets/logos/Diraya-Logo-dark.png";
 import lightLogo from "@/assets/logos/Diraya-Logo-light.png";
 import Image from "next/image";
-import { ServiceConsultationModal } from "./service-consultation-modal";
+import { ConsultationModal } from "./consultation-modal";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -164,10 +164,9 @@ export function Navbar() {
           )}
         </div>
       </nav>
-      <ServiceConsultationModal
+      <ConsultationModal
         isOpen={isConsultationOpen}
         onClose={() => setIsConsultationOpen(false)}
-        serviceName={""}
       />
     </>
   );
