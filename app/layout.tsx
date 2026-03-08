@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   description:
     "Diraya (دراية) - مكتب الأستاذ محمد صادق للمحاماة بالرباط. خدمات قانونية متخصصة في القانون المغربي.",
 
-  metadataBase: new URL("https://diraya-law.vercel.app"),
+  metadataBase: new URL("https://dirayaa.vercel.app"),
 
   keywords: [
     "Law Firm Website",
@@ -58,11 +58,11 @@ export const metadata: Metadata = {
     title: "Diraya | مكتب محاماة",
     description:
       "A professional law firm website with consultation booking, blog system, dark mode, and multilingual support.",
-    url: "https://diraya-law.vercel.app",
+    url: "https://dirayaa.vercel.app",
     siteName: "Diraya",
     images: [
       {
-        url: "https://diraya-law.vercel.app/opengraph-image.png",
+        url: "https://dirayaa.vercel.app/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Diraya - مكتب محمد صادق للمحاماة بالرباط",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     title: "Diraya | مكتب محاماة",
     description:
       "Professional law firm website built with Next.js, featuring consultation booking and multilingual support.",
-    images: ["https://diraya-law.vercel.app/opengraph-image.png"],
+    images: ["https://dirayaa.vercel.app/opengraph-image.png"],
   },
 };
 
